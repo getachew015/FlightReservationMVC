@@ -28,8 +28,8 @@ public class RegistrationController {
 		//returning a string of view name, command string and model instance
 		return new ModelAndView("register","command", new User());
 	}
-	
-	@RequestMapping(value="registeruser", method = RequestMethod.POST)
+	//for @Valid annotation BindingResult should come after the form object being validated 
+	@RequestMapping(value="registerUser", method = RequestMethod.POST)
 	public ModelAndView addCustomer(@Valid @ModelAttribute("command") User user, BindingResult result,
 			ModelMap model){
 		

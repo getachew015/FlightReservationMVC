@@ -30,7 +30,7 @@
 	rel="stylesheet" type="text/css">
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="/resources/travel/InfyGo.ico">
+<link rel="shortcut icon" href="/resources/travel/infygo.ico">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -57,8 +57,6 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="logo1" href=""><img
-						src="<c:url value='/resources/images/infygonew.PNG'/>" alt=""></a>
 						 
 				</div>
 
@@ -70,7 +68,10 @@
 							<li><a href="#about-us">About Us</a></li>
 							<li><a href="#contact">Contact Us</a></li>
 						</ul>
-						<ul class="nav navbar-nav navbar-right margintop-5">
+<%-- 						<a class="logo1" href=""><img
+							src="<c:url value='/resources/images/infygonew.PNG'/>" alt=""></a>
+--%>						
+ 						<ul class="nav navbar-nav navbar-right margintop-5">
 
 							<li><a class="btn btn-xs  nav-links-right"
 								href="register"> <span class="glyphicon glyphicon-user"></span>&nbsp;Sign
@@ -94,7 +95,7 @@
 	
 	<!-- SLIDER -->
 	<section id="slider" class="margintop-10">
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="fontstyle"><b>IRS with SpringMVC</b></font>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="fontstyle"></font>
 		<div id="home-carousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 			<c:if test="${logoutMessage ne null }">
@@ -109,7 +110,7 @@
 						<div class="col-sm-6">
 								<p class="head " style="color:white">Connecting flight</p>
 								<p class="carousel-content  " style="color:white">Taking more than one flight to
-									get to your final destination? At InfyGo, we make connecting
+									get to your final destination? At iTravel, we make connecting
 									flights much easier!</p>
 						</div>
 					</div>					
@@ -118,7 +119,7 @@
 					<br><br>
 					<div class="container">
 						<div class="col-sm-6">
-								<p class="head " style="color:white">InfyGo Meals onboard</p>
+								<p class="head " style="color:white">iTravel Meals onboard</p>
 								<p class="carousel-content " style="color:white">Tickle your taste buds and enjoy
 									sumptuous meals onboard!</p>
 						</div>
@@ -162,8 +163,8 @@
 					<div class="about-us ">
 						<br>
 						<p>
-							<b>Why InfyGo?<br></b> The leading player in online flight
-							bookings in India, InfyGo provides great offers, some of the
+							<b>Why iTravel?<br></b> The leading player in online flight
+							bookings, iTravel provides great offers, some of the
 							lowest airfares, exclusive discounts and a seamless online
 							booking experience. Flight bookings through our website is a
 							customer friendly experience, and with just a few clicks you can
@@ -172,18 +173,18 @@
 						<br>
 
 						<p>
-							<b>Booking Flights with InfyGo<br></b> While booking flights
-							with InfyGo, you can expect the ultimate online booking
+							<b>Booking Flights with iTravel<br></b> While booking flights
+							with iTravel, you can expect the ultimate online booking
 							experience. With premium customer service, 24/7 dedicated
 							helpline for support, and over 5 million delighted customers,
-							InfyGo takes great pride in enabling customer satisfaction.
+							iTravel takes great pride in enabling customer satisfaction.
 						</p>
 						<br>
 
 						<p>
-							<b>Domestic Flights with InfyGo<br></b> InfyGo is India's
+							<b>Domestic Flights with iTravel<br></b> iTravel is the
 							leading player for flight bookings, and have a dominant position
-							in the domestic flights sector. With the cheapest fare guarantee,
+							in the flights sector. With the cheapest fare guarantee,
 							experience great value at the lowest price.
 						</p>
 
@@ -210,17 +211,16 @@
 					<!-- <p class="contact-content">MService.</p>-->
 					<br>
 					<p class="st-address">
-						<i class="fa fa-map-marker"></i> Airport Sales Counter No-01,
-						Bengaluru International Airport,Devanhalli, Bengaluru 560300
+						<i class="fa fa-map-marker"></i> 2201 Victory Ave, Dallas, TX 75219
 					</p>
 					<p class="st-phone">
-						<i class="fa fa-mobile"></i> 09949596999
+						<i class="fa fa-mobile"></i> +1 800-423-7310
 					</p>
 					<p class="st-email">
-						<i class="fa fa-envelope-o"></i> InfyGo@infosys.com
+						<i class="fa fa-envelope-o"></i> info@iTravel.com
 					</p>
 					<p class="st-website">
-						<i class="fa fa-globe"></i> www.InfyGo.com
+						<i class="fa fa-globe"></i> www.iTravel.com
 					</p>
 
 				</div>
@@ -288,7 +288,7 @@
 				<!-- /SOCIAL ICONS -->
 				<div class="col-sm-6 col-sm-pull-6 padding-15">
 					<p>
-						&copy; 2017 <a href="${pageContext.servletContext.contextPath}">InfyGo</a>. All Rights Reserved.
+						&copy; 2017 <a href="${pageContext.servletContext.contextPath}">iTravel</a>. All Rights Reserved.
 					</p>
 				</div>
 			</div>

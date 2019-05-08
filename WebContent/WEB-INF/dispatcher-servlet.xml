@@ -14,20 +14,26 @@
                         http://www.springframework.org/schema/aop 
    						http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
    						
-   		<context:component-scan base-package="com.dagim.rs"/>
-		<aop:aspectj-autoproxy/>
-		<mvc:annotation-driven />
-			<context:component-scan base-package="com.dagim.rs" />
-		<mvc:view-resolvers>
-			<mvc:jsp prefix="/WEB-INF/view/" suffix=".jsp" />
-		</mvc:view-resolvers>
-		<bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
-		<mvc:view-controller path="/home" view-name="home" />
+  	<context:component-scan base-package="com.dagim.rs"/>
+	<aop:aspectj-autoproxy/>
+	<mvc:annotation-driven />
+	<mvc:view-resolvers>
+		<mvc:jsp prefix="/WEB-INF/view/" suffix=".jsp" />
+	</mvc:view-resolvers>
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+	<mvc:view-controller path="/home" view-name="home" />
 			<!--Dynamic Row Code -->
 	<mvc:resources mapping="js/**" location="/WEB-INF/js/" />
 	<!--End Of Dynamic Row Code -->
 
 	<mvc:view-controller path="/home" view-name="home" />
+
+	<!--For Locale Change ***config-i10N -->
+
+	<bean name="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="locale" />
+	</bean>
 
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
@@ -37,15 +43,10 @@
 		class="org.springframework.context.support.ResourceBundleMessageSource"
 		p:basenames="message" />
 
-	<!--For Locale Change ***congi-1 -->
-
-	<bean name="localeChangeInterceptor"
-		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-		<property name="paramName" value="locale" />
-	</bean>
 
 
 	<mvc:interceptors>
+	
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
 			p:paramName="locale" />
 		<bean id="themeChangeInterceptor"

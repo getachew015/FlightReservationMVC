@@ -130,11 +130,11 @@
 			
 				<div class="panel-heading">
 				<h4 class="capital">
-								<spring:message code="register.register" text="default text" /> 
+				<spring:message code="register.register" text="default text" /> 
 				</h4>
 				
 				<div style="width: 100%;margin-right:-55px" align="right" class="fontstyle">
-					Language : <a href="?locale=en">English</a>|<a href="?locale=hi">Hindi</a>
+					Language : <a href="?locale=en">English</a>|<a href="?locale=hi">Hindi</a>|<a href="?locale=cn">Chinese</a>
 				</div>
 				<div style="width: 100%;margin-right:-35px" align="right" class="fontstyle">
 					Themes : <a href="?theme=green">Green</a>|<a href="?theme=red">Red</a>|<a href="?theme=default">Default</a>
@@ -147,11 +147,9 @@
 							<spring:message code="register.userid" text="default text"
 								 />
 								 <span style="color: red">*</span>
-								
-							
 							</div>
 							<div class="col-sm-6">
-								<form:input path="userId" class="form-control" />
+								<form:input path="userId" class="form-control"/>
 								<br> 
 								<form:errors path="userId" />
 							</div>
