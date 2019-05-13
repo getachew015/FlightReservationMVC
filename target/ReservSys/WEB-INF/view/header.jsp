@@ -16,10 +16,9 @@
 				    	<span class="icon-bar"></span>
 				    	<span class="icon-bar"></span>
 					</button>
-					<a class="logo1"  href="${pageContext.servletContext.contextPath}">
-						
-				<img id="a" src="<c:url value='/resources/images/infygonew.PNG'/>"></img> 
-				</a>
+					<a class="logo1"  href="${pageContext.servletContext.contextPath}/">
+						<img id="a" src="<c:url value='/resources/images/infygonew.PNG'/>"></img> 
+					</a>
 	          </div>
 	        			
 			<div class="collapse navbar-collapse" id="st-navbar-collapse">

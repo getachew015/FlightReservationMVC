@@ -5,19 +5,16 @@
  <property name="LOGDIR" value="D:/logs" /> 
       <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>${LOGDIR}/ReservSys.log</file>
-        <append>true</append> 
-
-       
-       <layout class="ch.qos.logback.classic.PatternLayout">
+        <append>true</append>
+        <layout class="ch.qos.logback.classic.PatternLayout">
 			<Pattern>
 				%d{yyyy-MM-dd HH:mm:ss}---[%thread] --- %-5level  ---- %msg - %n
 			</Pattern>
-		</layout>
-    </appender>
-
-
-    <root level="INFO">
+	  	</layout>
+     </appender>
+     <root level="INFO">
         <appender-ref ref="FILE" />
-    </root>
- 
+        <appender-ref ref="STDOUT" />
+     </root>
+
 </configuration>

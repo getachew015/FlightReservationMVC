@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link  rel="stylesheet" href='<spring:theme code="css"/>' type="text/css" />  
 <title><spring:theme code="page.title"/></title> 
-<title>iTravle Booking</title>
+<title>iTravel Booking</title>
 	<link rel="stylesheet" href="<c:url value='/resources/css/newstyle.css'/>"
 	type="text/css" media="all">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" 

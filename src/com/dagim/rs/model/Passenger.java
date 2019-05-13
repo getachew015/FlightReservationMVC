@@ -17,6 +17,7 @@ public class Passenger {
     private String gender;
 
     public Passenger() {
+    	
     }
 
     public Passenger(String name, Integer age, String gender) {

@@ -6,18 +6,18 @@
 package com.dagim.rs.model;
 
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class SearchFlights {
 	
-	@NotEmpty(message="Please enter the origin")
-	@NotNull(message="Soource is mandatory")
-	private String source;
+	 @NotEmpty(message="Please enter the origin")
+	 @NotNull(message="Soource is mandatory")
+	 private String source;
 	 
 	 @NotEmpty(message="Please enter the destination")
 	 @NotNull(message="Destination is mandatory")
 	 private String destination;
+	 
 	 @NotEmpty(message="Please enter the journey date")
 	 @NotNull(message="Journey date is mandatory")
 	 private String journeyDate;

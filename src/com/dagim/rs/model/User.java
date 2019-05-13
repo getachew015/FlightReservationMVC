@@ -7,13 +7,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class User {
 	
 	@NotEmpty(message="UserId can not be blank")
-	@Size(min=5, max=15, message = "User Id should be between 5 and 15 characters")
+	@Size(min=5, max=30, message = "User Id should be between 5 and 30 characters")
 	private String userId;
 	@NotEmpty(message = "User Name can not be blank")
-	@Size(min=3, max=15, message = "User name should be between 5 and 15 characters")
+	@Size(min=3, max=50, message = "User name should be between 5 and 50 characters")
 	private String name;
 	@NotEmpty(message = "email can not be blank")
-	@Size(min=5, max=15, message = "Email should be between 5 and 15 characters")	
+	@Size(min=5, max=50, message = "Email should be between 5 and 50 characters")	
 	private String email;
 	@NotEmpty(message = "PhoneNumber must not be blank.")
 	@Size(min = 10, max = 10, message = "PhoneNumber must be 10 digits.")
@@ -21,7 +21,7 @@ public class User {
 	@NotEmpty(message="Address must not be blank")
 	private String address;
 	@NotEmpty(message="Password can not be blank")
-	@Size(min=8, max=14, message = "Password must be between 8 to 15 Characters.")
+	@Size(min=8, max=15, message = "Password must be between 8 to 15 Characters.")
 	private String password;
 	
 	
