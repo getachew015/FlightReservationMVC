@@ -13,7 +13,7 @@
 			<!-- /SOCIAL ICONS -->
 			<div class="col-sm-6 col-sm-pull-6 padding-15">
 				<p>
-					<COPYRIGHT />
+					CopyRight &#x00A9;
 					2019 <a href="Home.htm">iTravel</a>. All Rights Reserved.
 				</p>
 			</div>

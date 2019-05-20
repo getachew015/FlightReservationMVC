@@ -49,7 +49,7 @@
             </div>
             </div>
             <div class="row margintop-10">
-                <div class="col-sm-3 fontstyle text-right">Origin:</div>
+                <div class="col-sm-3 fontstyle text-right">Departure:</div>
             <div class="col-sm-3 fontstyle text-left">
                 <b><span id="origin">${booking.source}</span></b>
             </div>
@@ -71,7 +71,7 @@
             <div class="row margintop-10">
                 <div class="col-sm-3 fontstyle text-right">Fare:</div>
             <div class="col-sm-3 fontstyle text-left">
-                <b>Rs. <span id="fare">${booking.fare}</span></b>
+                <b> <span id="fare">${booking.fare}</span> USD</b>
             </div>
             </div>
             <div class="row margintop-30">

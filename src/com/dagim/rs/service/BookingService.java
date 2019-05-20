@@ -1,10 +1,8 @@
 package com.dagim.rs.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.dagim.rs.entity.FlightEntity;
 import com.dagim.rs.model.SearchFlights;
 import com.dagim.rs.repository.FlightRepository;
@@ -14,6 +12,7 @@ import com.dagim.rs.exception.PassengerDetailNotFoundException;
 import com.dagim.rs.model.Booking;
 import com.dagim.rs.model.Passenger;
 import com.dagim.rs.model.PassengerListContainer;
+
 
 @Service
 public class BookingService {
@@ -29,6 +28,7 @@ public class BookingService {
 		result.setArrivalTime(flight.getArrivalTime());
 		result.setDepartureTime(flight.getDepartureTime());
 		result.setFare(flight.getFare().toString());
+		result.setSource(flight.getSource());
 		result.setDestination(flight.getDestination());
 		result.setFlightId(flight.getFlightId());
 		result.setFlightAvailableDate(CalendarUtility.getStringFromCalendar(flight.getFlightAvailableDate()));
@@ -51,7 +51,7 @@ public class BookingService {
 		booking.setSeats(passengerList.size());
 		Double totalFare = Double.parseDouble(booking.getFare()) * booking.getSeats();
 		booking.setFare(totalFare.toString());
-		Integer pnr = (int)Math.random() * 1858599;
+		Integer pnr = (int)(Math.random() * 1858599);
 		booking.setPnr(pnr);
 		return booking;
 	}

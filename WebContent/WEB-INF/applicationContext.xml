@@ -46,6 +46,5 @@
 		<!-- this bean with the well known name generates view names for us -->
 		<bean id="viewNameTranslator"
 		class="org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator"/>
-		
         
 </beans>

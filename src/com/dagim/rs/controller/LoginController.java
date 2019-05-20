@@ -40,8 +40,9 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/authenticateLogin", method = RequestMethod.POST)
-	public ModelAndView authenticateLogin(@Valid @ModelAttribute("command") Login userLogin, BindingResult result,
-			ModelMap model){
+	public ModelAndView authenticateLogin(@Valid @ModelAttribute("command") Login userLogin, 
+											BindingResult result, ModelMap model, 
+											HttpSession session) {
 
 		ModelAndView modelAndView = new ModelAndView("error");
 		try {
@@ -52,6 +53,7 @@ public class LoginController {
 				//System.out.println("customer name "+userEntity.getName());
 				model.addAttribute("userName", userEntity.getName());
 				model.addAttribute("userId", userEntity.getUserId());
+				session.setAttribute("userId", userEntity.getUserId());
                 //Select source values from db
                 List<String> s1 = flightService.getSources();
                 

@@ -2,7 +2,6 @@ package com.dagim.rs.service;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +36,6 @@ public class FlightService {
 	
 	public List<SearchFlights> getFlights(String source, String destination, Calendar journeyDate) throws  InvalidSourceDestinationException, FlightNotAvailableException, InvalidJourneyDateException, Exception{
 		Calendar today = Calendar.getInstance();
-		today.setTime(new Date());
 		if(today.after(journeyDate))
 			throw new InvalidJourneyDateException("FlightService.INVALID_JOURNEYDATE");
 		if(source.equalsIgnoreCase(destination))

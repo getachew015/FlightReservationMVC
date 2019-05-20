@@ -11,7 +11,7 @@ public class CalendarUtility
 
           /* Instantiated simple date format object and specified the pattern */
 
-          SimpleDateFormat simpleDate=new SimpleDateFormat("yyyy-MM-dd");
+          SimpleDateFormat simpleDate=new SimpleDateFormat("MM-dd-yyyy");
           Date dateReference=null;
 
           /* parse method returns the Java.Util.Date object corresponding to
@@ -36,7 +36,7 @@ public class CalendarUtility
           /* Declaration of variables   */
 
           Date date=null;
-          SimpleDateFormat simpleDate=new SimpleDateFormat("yyyy-MM-dd");
+          SimpleDateFormat simpleDate=new SimpleDateFormat("MM-dd-yyyy");
 
           /* Getting Date from the calendar object and using format method for retrieval of
            * date in text format */

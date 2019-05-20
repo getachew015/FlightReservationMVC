@@ -1,6 +1,6 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="java.text.*"%>
@@ -75,61 +75,60 @@
 
 			<div class="  col-sm-12 " >
 
-						<h3 class="red" id="msg2"></h3>
+			<h3 class="red" id="msg2"></h3>
 
-						<div class=" form-group   col-sm-3" >
-							<form:label path="source" class="control-label">Departure City<span
-									class="red">*</span>
-							</form:label>
-							<br>
-							<!--<form:input path="source"  class="form-control" />-->
-							<form:select id="olist" path="source" class="form-control" required="true" title="Select source">
-								<!-- <option>Chennai</option>
-								<option>Delhi</option> -->
-								 <form:option label="--Select  origin--" value=""/>
-                                 <form:options items="${sourceList}"/> 
-							</form:select>
+			<div class=" form-group   col-sm-3" >
+				<form:label path="source" class="control-label">Departure City<span
+						class="red">*</span>
+				</form:label>
+				<br>
+				<!--<form:input path="source"  class="form-control" />-->
+				<form:select id="olist" path="source" class="form-control" required="true" title="Select source">
+					<!-- <option>Chennai</option>
+					<option>Delhi</option> -->
+					 <form:option label="--Select  origin--" value=""/>
+                              <form:options items="${sourceList}"/> 
+				</form:select>
 
-							<br>
-							<form:errors path="source" />
-							<br>
-						</div>
+				<br>
+				<form:errors path="source" />
+				<br>
+			</div>
 
+			<div class=" form-group col-sm-3">
+				<form:label path="destination" class="control-label ">Destination City<span
+						class="red">*</span>
+				</form:label>
+				<br>
+				<!--<form:input path="destination" class="form-control" />-->
+				<form:select id="dlist" path="destination" class="form-control" required="true" title="Select destination">
+					<!-- <option>Pune</option>
+					<option>Bangalore</option> -->
+					<form:option label="--Select  destination--" value=""/>
+                             <form:options items="${destinationList}"/> 
+				</form:select>
+				<br>
+				<form:errors path="destination" />
+				<br>
+			</div>
+			<div class="form-group col-sm-3">
+				<form:label path="journeyDate" class="control-label">Travel Date<span
+						class="red">*</span>
+				</form:label>
+				<br>
+				<form:input type="text" id="datepicker" path="journeyDate"
+					class="form-control" required="true" title="Journey date is mandatory" />
+				<br>
+				<form:errors path="journeyDate" />
+				<br>
+			</div>
 
-						<div class=" form-group col-sm-3">
-							<form:label path="destination" class="control-label ">Destination City<span
-									class="red">*</span>
-							</form:label>
-							<br>
-							<!--<form:input path="destination" class="form-control" />-->
-							<form:select id="dlist" path="destination" class="form-control" required="true" title="Select destination">
-								<!-- <option>Pune</option>
-								<option>Bangalore</option> -->
-								<form:option label="--Select  destination--" value=""/>
-                                <form:options items="${destinationList}"/> 
-							</form:select>
-							<br>
-							<form:errors path="destination" />
-							<br>
-						</div>
-						<div class="form-group col-sm-3">
-							<form:label path="journeyDate" class="control-label">Travel Date<span
-									class="red">*</span>
-							</form:label>
-							<br>
-							<form:input type="text" id="datepicker" path="journeyDate"
-								class="form-control" required="true" title="Journey date is mandatory" />
-							<br>
-							<form:errors path="journeyDate" />
-							<br>
-						</div>
-
-						<div class="col-sm-3 pull-right" style="margin-top :3px">
-							<br>
-							<button type="submit" id="searchbtn"
-								class="btn btn-primary ">Search Flights</button>
-							<br>
-						</div>
+			<div class="col-sm-3 pull-right" style="margin-top :3px">
+				<br>
+				<button type="submit" id="searchbtn"
+					class="btn btn-primary ">Search Flights</button>
+				<br>
+			</div>
 
 	</div>
 	</div>
@@ -137,123 +136,101 @@
 	<div class="col-md-12 text-center">
     	<div class="text-center text-danger">${message}</div>  
     </div>
-	<c:if test = "${fn:length(availableFlights) gt 0}">
-					<div class="row marginbottom-150 padding-20">
-						<form:form method="POST" >
-						<%!Random randomValue = new Random();%>
+    
+<c:if test = "${fn:length(availableFlights) gt 0}">
+		<div class="row marginbottom-150 padding-20">
+		<form:form method="POST" >
+		<%!Random randomValue = new Random();%>
 		<!-- for filter and results -->
-						<div class="row">
-							<div class="col-md-3   backgroundGrey " >
-									
-								<div class="col-xs-12 padding-3 margintop-10 ">Departure from</div>
-								<div class="col-xs-6  departborder margintop-10 " id="dep1">Before 12:00hrs</div>
-								<div class="col-xs-6  departborder margintop-10 " id="dep2">After 12:00hrs</div>
-								<div class="col-xs-12"><hr class="darkgrey"/></div>
-								<div class="col-xs-12 padding-3 margintop-10 ">Airlines</div>
-								<div class="col-xs-12  departborder margintop-10 padding-3">
-									<div class="col-xs-6 text-left  ">WingMeIn</div>
-									<div class="col-xs-offset-3 col-xs-3 padding-3"><input type="checkbox" value="WingMeIn" id="air1" class="chk" name="airlines"/></div>
-						</div>
-				<div class="col-xs-12  margintop-10 departborder padding-3">
-					<div class="col-xs-8 text-left  ">Aviate </div>
-					<div class="col-xs-offset-1 col-xs-3 padding-3"><input type="checkbox" value="Aviate" id="air2" class="chk" name="airlines"/></div>
-				</div>						
-				<div class="col-xs-12  margintop-10 departborder padding-3">
-					<div class="col-xs-6 text-left  ">FlyWithMe</div>
-					<div class="col-xs-offset-3 col-xs-3 padding-3"><input type="checkbox" value="FlyWithMe" id="air3" class="chk" name="airlines"/></div>
+		<div class="row">
+			<div class="col-md-3   backgroundGrey " >			
+				<div class="col-xs-12 padding-3 margintop-10 ">Departure from</div>
+				<div class="col-xs-6  departborder margintop-10 " id="dep1">Before 12:00hrs</div>
+				<div class="col-xs-6  departborder margintop-10 " id="dep2">After 12:00hrs</div>
+				<div class="col-xs-12"><hr class="darkgrey"/></div>
+				<div class="col-xs-12 padding-3 margintop-10 ">Airlines</div>
+				<div class="col-xs-12  departborder margintop-10 padding-3">
+					<div class="col-xs-6 text-left  ">WingMeIn</div>
+					<div class="col-xs-offset-3 col-xs-3 padding-3"><input type="checkbox" value="WingMeIn" id="air1" class="chk" name="airlines"/></div>
 				</div>
-				<div class="col-xs-12"><hr class="darkgrey"/></div>	
-				
-				<div class="col-xs-12 padding-10 margintop-10  ">Price Range</div>
-				<div class="col-xs-12 departborder margintop-10 marginbottom-10">
-					<div class="row">
-						<div class="col-xs-6 text-left" id="min1">
-						</div>
-						<div class="col-xs-6 text-right" id="max1"></div>
-					</div>
-					<div class="row padding-10 ">
-						 <p id="amount" style="font-size:80%;border:0; color:#487757; ">
-						 </p>
-					 
-					<div id="slider-range"></div>
-					</div>	
-				</div>
-				<div class="col-xs-12">
-			 </div>
-				<!-- 	<div class="col-xs-12 margintop-10 marginbottom-10">
-					<div class="row">
-						<div class="col-xs-6 text-left" id="min1">
-						</div>
-						<div class="col-xs-6 text-right" id="max1"></div>
-					</div>
-					<div class="row">
-					<div class="padding-15">
-						<input id="ex2" type="text" class="span2" value="" data-slider-min="2000" data-slider-max="15000" data-slider-value="[2000,15000]" />
-					
-					</div></div>
-				</div> -->					
-				
+			<div class="col-xs-12  margintop-10 departborder padding-3">
+				<div class="col-xs-8 text-left  ">Aviate </div>
+				<div class="col-xs-offset-1 col-xs-3 padding-3"><input type="checkbox" value="Aviate" id="air2" class="chk" name="airlines"/></div>
+			</div>						
+			<div class="col-xs-12  margintop-10 departborder padding-3">
+				<div class="col-xs-6 text-left  ">FlyWithMe</div>
+				<div class="col-xs-offset-3 col-xs-3 padding-3"><input type="checkbox" value="FlyWithMe" id="air3" class="chk" name="airlines"/></div>
 			</div>
-			
-			<div class="col-md-9  backgroundGrey" >
-						<table id="flightDetails1" class="display table  table-striped"
-							style="width: 100%" hidden="hidden">
-							<thead>
-								<tr>
-									<th ><font class=" "><b>Airline</b></font></th>	
-								<th ><font class=" "><b>Departure Time</b></font></th>		
-								<th ><font class=" "><b>Arrival Time</b></font></th>								
-									<th ><font class=" "><b> Seats</b></font></th>
-									<th ><font class=" "><b>Fare(In Rs)</b></font></th>
-									<th ><font class=" "><b>Book</b></font></th>
-								</tr>
-							</thead>
-							<tbody>
-						</tbody>
-						</table>
+			<div class="col-xs-12"><hr class="darkgrey"/></div>	
+			<div class="col-xs-12 padding-10 margintop-10  ">Price Range</div>
+		<div class="col-xs-12 departborder margintop-10 marginbottom-10">
+			<div class="row">
+				<div class="col-xs-6 text-left" id="min1"> </div>
+				<div class="col-xs-6 text-right" id="max1"></div>
+			</div>
+			<div class="row padding-10 ">
+				 <p id="amount" style="font-size:80%;border:0; color:#487757; ">
+				 </p>			 
+				 <div id="slider-range"></div>
+			</div>	
+		</div>
+			<div class="col-xs-12"></div>			
+		</div>
 		
+		<div class="col-md-9  backgroundGrey" >
+			<table id="flightDetails1" class="display table  table-striped"
+				style="width: 100%" hidden="hidden">
+				<thead>
+					<tr>
+						<th ><font class=" "><b>Airline</b></font></th>	
+					<th ><font class=" "><b>Departure Time</b></font></th>		
+					<th ><font class=" "><b>Arrival Time</b></font></th>								
+						<th ><font class=" "><b> Seats</b></font></th>
+						<th ><font class=" "><b>Fare(In USD)</b></font></th>
+						<th ><font class=" "><b>Book</b></font></th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+		</table>
 		
-			
-					    <table id="flightDetails" class="display table  table-striped" style="width: 200%">
-
-							<thead> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Time with 24-hour clock
-								<tr>
-									<th ><b>Airline</b></th>	
-								<th ><b>Departure Time</b></th>		
-								<th ><b>Arrival Time</b></th>								
-									<th ><b> Seats</b></th>
-									<th ><b>Fare(In Rs)</b></th>
-									<th ><b>Book</b></th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="flight" items="${availableFlights}">
+			    <table id="flightDetails" class="display table  table-striped" style="width: 200%">
+		
+					<thead> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Time with 24-hour clock
+						<tr>
+							<th ><b>Airline</b></th>	
+							<th ><b>Departure Time</b></th>		
+							<th ><b>Arrival Time</b></th>								
+							<th ><b> Seats</b></th>
+							<th ><b>Fare(In USD)</b></th>
+							<th ><b>Book</b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="flight" items="${availableFlights}">		
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<tr>
+								<td><form:label style="font-weight:300" path="airlines">${flight.airlines}-${flight.flightId} </form:label></td>
+								<td><form:label style="font-weight:300" path="departureTime">${flight.departureTime}</form:label></td>	
+								<td><form:label style="font-weight:300" path="departureTime">${flight.arrivalTime}</form:label></td>										
+								<%--<td><form:label path="departureTime">&nbsp;&nbsp;&nbsp;&nbsp;11:00</form:label></td> --%>								<td><form:label style="font-weight:300" path="seatCount">${flight.seatCount}</form:label></td>
+								<td><form:label style="font-weight:300" path="fare">${flight.fare}</form:label></td>
+								<td><%-- <a
+									href="Proceed.htm?fare=${flight.fare}&from=${flight.source}&to=${flight.destination}&jdate=${flight.flightAvailableDate}&time=<%=(new SimpleDateFormat("HH:mm:ss")).format(data.getTime())%>&seat=${flight.seatCount}&user=${userName}&fid=${flight.flightId}">Book</a></td> --%>
 									
-									&nbsp;&nbsp;&nbsp;&nbsp;
-									<tr>
-										<td><form:label style="font-weight:300" path="airlines">${flight.airlines}-${flight.flightId} </form:label></td>
-										<td><form:label style="font-weight:300" path="departureTime">${flight.departureTime}</form:label></td>	
-										<td><form:label style="font-weight:300" path="departureTime">${flight.arrivalTime}</form:label></td>										
-										<td><form:label path="departureTime">&nbsp;&nbsp;&nbsp;&nbsp;11:00</form:label></td>
-										<td><form:label style="font-weight:300" path="seatCount">${flight.seatCount}</form:label></td>
-										<td><form:label style="font-weight:300" path="fare">${flight.fare}</form:label></td>
-										<td><%-- <a
-											href="Proceed.htm?fare=${flight.fare}&from=${flight.source}&to=${flight.destination}&jdate=${flight.flightAvailableDate}&time=<%=(new SimpleDateFormat("HH:mm:ss")).format(data.getTime())%>&seat=${flight.seatCount}&user=${userName}&fid=${flight.flightId}">Book</a></td> --%>
-											
-										<a	href="bookFlight?flightid=${flight.flightId}">Book</a></td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-				</div>
-				</div>
-		</form:form>
-					</div>
-					</div>
-					
-	</c:if>
+								<a	href="bookFlight?flightid=${flight.flightId}">Book</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+		</div>
+		</div>
+	</form:form>
+		</div>
+</c:if>
+	
 	</div>
 	</div>
 
@@ -263,28 +240,28 @@
 	<script type="text/javascript">
 	  	$( document ).ready(function() {
 	
-		$("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+		$("#datepicker").datepicker({ dateFormat: 'mm-dd-yy' });
 	
 	 
 		  $( "#slider-range" ).slider({
 		      range: true,
-		      min: 2000,
-		      max: 15000,
-		      values: [ 3000, 5000 ],
+		      min: 50,
+		      max: 2000,
+		      values: [ 150, 350 ],
 		      slide: function( event, ui ) {
-		        $( "#amount" ).html( "Rs." + ui.values[ 0 ] + " - Rs." + ui.values[ 1 ] );
+		        $( "#amount" ).html( "USD." + ui.values[ 0 ] + " - USD." + ui.values[ 1 ] );
 		        
 		  
 		      }
 		      
 		    });
-		    $( "#amount" ).html( "Rs." + $( "#slider-range" ).slider( "values", 0 ) +
-		      " - Rs." + $( "#slider-range" ).slider( "values", 1 ) );
+		    $( "#amount" ).html( "USD." + $( "#slider-range" ).slider( "values", 0 ) +
+		      " - USD." + $( "#slider-range" ).slider( "values", 1 ) );
 		 
 		    $( "#slider-range" ).slider({
 		    	  change: function( event, ui ) {
 		    		  
-		    		  console.log("Rs." + ui.values[ 0 ] + " - Rs." + ui.values[ 1 ]);
+		    		  console.log("USD." + ui.values[ 0 ] + " - USD." + ui.values[ 1 ]);
 		    		  var airlinesarr=[];
 		    		  <c:forEach var="listValue" items="${availableFlights}">
 			    		  var flightdict={};

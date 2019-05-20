@@ -98,7 +98,7 @@ $(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClas
 
 								<div class="col-sm-3 fontstyle text-right">Fare:</div>
 								<div class="col-sm-3 fontstyle text-left">
-									<b>Rs. <span id="fare">${booking.fare}</span></b>
+									<b>USD <span id="fare">${booking.fare}</span></b>
 								</div>
 								
 								

@@ -19,9 +19,6 @@ public class CreditCard {
 	@Size(min=3,max=3 , message = "CVV must be 3 digits")
 	private String cvv;
 	
-	@NotNull(message = "Please enter the 3D secure pin")
-	@Size(min=6,max=6 , message = "Secure PIN must be 6 digits")
-	private String securePin;
 	@NotNull(message = "Please enter the card expiry month")
 	private String expiryMonth;
 	@NotNull(message = "Please enter the card expiry year ")
@@ -44,12 +41,6 @@ public class CreditCard {
 	}
 	public void setCvv(String cvv) {
 		this.cvv = cvv;
-	}
-	public String getSecurePin() {
-		return securePin;
-	}
-	public void setSecurePin(String securePin) {
-		this.securePin = securePin;
 	}
 	public String getExpiryMonth() {
 		return expiryMonth;

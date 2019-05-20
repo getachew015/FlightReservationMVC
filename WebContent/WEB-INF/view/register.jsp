@@ -27,7 +27,7 @@
 </head>
 
 
-<body>
+<body onload="focusOnInput()">
 
 	<jsp:include page="header.jsp"></jsp:include>
 	
@@ -254,7 +254,13 @@
 		</div>
 		</div>
 	<!-- /SIGNUP -->
-
+	
+	<script type="text/javascript">
+		function focusOnInput(){
+			document.getElementById("userId").focus();
+		}
+	</script>
+	
 
 
 	<jsp:include page="footer.jsp"></jsp:include>

@@ -30,8 +30,9 @@ public class RegistrationController {
 	}
 	//for @Valid annotation BindingResult should come after the form object being validated 
 	@RequestMapping(value="registerUser", method = RequestMethod.POST)
-	public ModelAndView addCustomer(@Valid @ModelAttribute("command") User user, BindingResult result,
-			ModelMap model){
+	public ModelAndView addCustomer(@Valid @ModelAttribute("command") User user, 
+									BindingResult result,
+									ModelMap model){
 		
 		ModelAndView modelAndView = new ModelAndView();
 		if(result.hasErrors())
