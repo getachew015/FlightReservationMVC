@@ -5,8 +5,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /* Access Strategies in JPA and Hibernate (field-based access and property-based access)
- * If we use @Id annotation on the primary key then hibernate assumes using field based
- * if we use the @Id at the getter() method hibernate will use property based access method
+ * If we use @Id annotation on the primary key then Jpa assumes using field based
+ * if we use the @Id at the getter() method Jpa will use property based access method
  * And if we want to use both in combination we have to explicity specify useing @AccessType.FIELD or @AccessType.PROPERTY
 */
 

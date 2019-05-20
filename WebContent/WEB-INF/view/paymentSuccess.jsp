@@ -36,14 +36,14 @@
 		style="width: 70%; margin-left: 200px;">
 		<br>
 		<div class="panel-body text-center">
-			<form:form method="POST">
+			<form:form method="GET">
 				<br>
 				<div class="panel panel-primary ">
 					<div class="panel-heading">
 						<h4>Ticket Details</h4>
 					</div>
 					<div class="panel-body">
-			<form:form method="POST">
+			<form:form method="GET">
 				<div class="row text-center fontstyle">
 							<c:if test="${ paymentMessage ne null}">
 								<h3 class="text-center text-success">${paymentMessage}</h3>
