@@ -41,9 +41,7 @@
 	</bean>
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource"
-		p:basenames="message" />
-
-
+		p:basenames="message"/>
 
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"

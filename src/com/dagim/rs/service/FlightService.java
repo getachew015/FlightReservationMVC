@@ -52,6 +52,7 @@ public class FlightService {
 			flight.setFlightId(f.getFlightId());
 			flight.setSource(f.getSource());
 			flight.setDestination(f.getDestination());
+			flight.setJourneyDate(CalendarUtility.getStringFromCalendar(journeyDate));
 			flight.setFlightAvailableDate(CalendarUtility.getStringFromCalendar(f.getFlightAvailableDate()));
 			flight.setDepartureTime(f.getDepartureTime());
 			flight.setArrivalTime(f.getArrivalTime());
